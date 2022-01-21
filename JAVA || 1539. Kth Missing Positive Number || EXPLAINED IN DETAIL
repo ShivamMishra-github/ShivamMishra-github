@@ -43,3 +43,24 @@ ARR[MID]-MID < = K  ==>  4 - 3 <= 2 ==> 1 <= 2
 START = 4 
 END   = 3
 WHILE(START<=END)   BREAKS    RETURN START + K ==> ANS  
+
+
+
+
+// NAIVE APPROUCH
+     int[] nums = new int[1001];
+        for(int i = 0 ; i < arr.length ; i++){
+            nums[arr[i]]++;
+        }
+        
+        for(int  i = 1 ; i < nums.length ; i++){
+            if(nums[i]==0){
+                k--;
+            }
+            if(k==0){
+                return i ;
+            }
+        }
+        return 1000+k;        // FOR TEST CASE GREATER THAN 1000 
+    }
+}//  https://www.youtube.com/watch?v=NY4aJNyWQMA  = SOLUTION FROM HERE
