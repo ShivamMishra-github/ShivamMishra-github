@@ -1,0 +1,45 @@
+ // BINARY SEARCH APPROUCH 
+        
+        int start = 0  , end = arr.length-1;
+        while(start<=end){
+            int mid = start + ( end - start ) / 2 ;
+            if(arr[mid]-mid<=k){
+                start = mid + 1;
+            }else{
+                end = mid - 1 ;
+            }
+        }
+        return start+k;
+    }
+}
+
+E_X_P_L_A_I_N_A_T_I_O_N
+
+START = 0
+END   = 3    
+[1  ,  2  ,  3  ,  4  ]   K = 2 
+START MID         END
+ARR[MID]-MID < = K  ==> 2 - 1 < = 2 ==> 1 <= 2
+                        START = MID + 1;                        
+
+START = 2
+END   = 3    
+
+[  1  ,  2  ,  3  ,  4  ]
+             START   END
+             MID
+ARR[MID]-MID < = K  ==> 3 - 2 <= 2 ==> 1 <= 2
+                        START = MID + 1;
+
+START = 3
+END   = 3
+[  1  ,  2  ,  3  ,  4  ]
+                   START
+                   MID
+                   END
+ARR[MID]-MID < = K  ==>  4 - 3 <= 2 ==> 1 <= 2
+                         START = MID + 1;
+
+START = 4 
+END   = 3
+WHILE(START<=END)   BREAKS    RETURN START + K ==> ANS  
